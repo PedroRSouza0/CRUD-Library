@@ -1,5 +1,5 @@
 import script
-from SQLfunctions import *
+from CRUD import *
 from time import sleep
 from Entities.Classes.Livro import Livro 
 from Entities.Classes.Cliente import Cliente
@@ -21,7 +21,7 @@ while True:
 
             if controle:
                 break
-    if escolha == 2:
+    elif escolha == 2:
         while True:
 
             nome = str(input('Nome: '))
@@ -39,15 +39,16 @@ while True:
             if res.upper() == 'N':
                 break
     
-    if escolha == 3:
-        while True:
-            for re in select('*', 'livro'):
-                print(re)
-            break
+    elif escolha == 3:
+        
+        sys.verDadosPrint()
 
-    if escolha == 4:
-        sys.saida()
+        ver_livros('*', condicao=1)        
         break
 
+    elif escolha == 4:
+        sys.saida()
+        break
+    
 
             

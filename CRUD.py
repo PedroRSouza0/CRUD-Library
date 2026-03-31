@@ -37,15 +37,36 @@ def cadastrar_cliente(cliente):
         return True
 
 
+def ver_livros(campos='*', condicao=0):
+    """
+    SELECT <campos> FROM <tabela> WHERE <condicao>
+    """
+    try:
+        if not condicao:
+            query = f"SELECT {campos} FROM livro"
+            cursor.execute(query)
+            saida = cursor.fetchall() # Recebe a query
+            for linha in saida:
+                print(linha)
+        elif condicao:
+            try:
+                query = f"SELECT {campos} FROM livro WHERE id_livro=10"
+                cursor.execute(query)
+                saida = cursor.fetchall()
+                print(saida)
+            except Exception as erro:
+                print(f'ERRO. {erro}')
+    except Exception as erro:
+        print(f'ERRO ao consultar livros, {erro}')
+    
 
-def select(field, table, where=''):
-    """
-    :param: field: Campo a ser mostrado
-    :param: table: Tabela
-    """
-    if where.isnumeric():
-        cursor.execute(f"""SELECT {field} FROM {table} WHERE id_cliente={where}""")
-    else:
-        cursor.execute(f"""SELECT {field} FROM {table}""")
-    retorno = cursor.fetchall()
-    return retorno
+def ver_cliente(campos, condicao=0):
+    try:
+        if not condicao:
+            query = f"SELECT {campos} FROM cliente"
+            cursor.execute(query)
+            saida = cursor.fetchall()
+            for linha in saida:
+                print(linha)
+    except Exception as erro:
+        print(f'ERRO ao consultar clientes, {erro}')

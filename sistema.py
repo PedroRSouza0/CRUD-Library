@@ -1,5 +1,5 @@
 from time import sleep
-
+import os
 
 def titulo(msg):
     print('-' * 30)
@@ -28,7 +28,15 @@ def menu():
             return 4
         
         
+def verDadosPrint():
+    print('-' * 30)
+    print('Deseja ver dados de qual tabela?'.center(30))
+    print('-' * 30)
+    print('1 - Livros')
+    print('2 - Clientes')
 
+    os.system('cls')
+    
 def saida():
     print('-' * 30)
     print('Encerrando...'.center(30))
