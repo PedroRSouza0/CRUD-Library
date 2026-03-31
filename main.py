@@ -1,26 +1,25 @@
 import script
-from functions import *
+from SQLfunctions import *
 from time import sleep
-while True:
-    print('\n1 - Cadastrar Livro ')
-    print('2 - Cadastrar Cliente ')
-    print('3 - Vizualizar dados')
-    print('4 - Sair')
+from Entities.Classes.Livro import Livro 
+from Entities.Classes.Cliente import Cliente
+import sistema as sys
+import os
 
-    escolha = int(input('>>> '))
+while True:
+
+    escolha = sys.menu()
+
     if escolha == 1:
         while True:
-            livro = []
             titulo = str(input('Titulo: '))
             autor = str(input('Autor: '))
             editora = str(input('Editora: '))
 
-            livro.append(titulo)
-            livro.append(autor)
-            livro.append(editora)
+            livro = Livro(titulo, autor, editora)
+            controle = cadastrar_livro(livro)  # Cadastra e controle recebe valor
 
-            controle = cadastrar_livro(livro)
-            if not controle:
+            if controle:
                 break
     if escolha == 2:
         while True:
@@ -28,15 +27,15 @@ while True:
             nome = str(input('Nome: '))
             ano_nascimento = int(input('Ano de nascimento: '))
             e_mail = str(input('E-mail: '))
-            controle = cadastrar_cliente(nome, ano_nascimento, e_mail)
+
+            cliente = Cliente(nome, ano_nascimento, e_mail)
+            controle = cadastrar_cliente(cliente) # cadastra e controle recebe valor
 
             if controle:
-                print('\nCliente Cadastrado com sucesso!')
-            
-            res = str(input('Deseja continuar? [Y/N] ')).upper()[0]
-            while res not in ['Y' , 'N']:
-                print('Digite uma opção válida!')
-                res = str(input('Deseja continuar? [Y/N] ')).upper()[0]
+                res = str(input('Deseja cadastrat outro? [Y/N] ')).upper()[0]
+                while res not in ['Y' , 'N']:
+                    print('Digite uma opção válida!')
+                    res = str(input('Deseja continuar? [Y/N] ')).upper()[0]
             if res.upper() == 'N':
                 break
     
@@ -47,8 +46,7 @@ while True:
             break
 
     if escolha == 4:
-        print('Encerrando...')
-        sleep(1.2)
+        sys.saida()
         break
 
 
