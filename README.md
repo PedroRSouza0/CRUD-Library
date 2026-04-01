@@ -24,24 +24,26 @@ O objetivo do projeto é praticar **lógica de programação**, manipulação de
 ---
 
 ## 📂 Estrutura do Projeto
-projeto/
-│
-├── controllers/
-│ ├── init.py
-│ └── CRUD.py
-│
-├── Entities/
-│ ├── init.py
-│ └── Classes/
-│ ├── init.py
-│ ├── Livro.py
-│ └── Cliente.py
-│
-├── view/
-│ ├── init.py
-│ └── sistema.py
-│
-└── main.py
+```
+    projeto/
+    │
+    ├── controllers/
+    │ ├── init.py
+    │ └── CRUD.py
+    │
+    ├── Entities/
+    │ ├── init.py
+    │ └── Classes/
+    │ ├── init.py
+    │ ├── Livro.py
+    │ └── Cliente.py
+    │
+    ├── view/
+    │ ├── init.py
+    │ └── sistema.py
+    │
+    └── main.py
+```
 
 ## ▶️ Como executar o projeto
 
