@@ -1,4 +1,4 @@
-from script import cursor, conexao
+from model.script import cursor, conexao
 from Entities.Classes.Livro import Livro 
 from Entities.Classes.Cliente import Cliente
 import os

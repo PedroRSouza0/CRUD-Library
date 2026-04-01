@@ -1,9 +1,9 @@
-import script
-from CRUD import *
+import model.script as script
+from controllers.CRUD import *
 from time import sleep
 from Entities.Classes.Livro import Livro 
 from Entities.Classes.Cliente import Cliente
-import sistema as sys
+import view.sistema as sys
 import os
 
 while True:
