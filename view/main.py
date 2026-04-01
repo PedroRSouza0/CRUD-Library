@@ -1,10 +1,8 @@
-import model.script as script
 from controllers.CRUD import *
 from time import sleep
 from Entities.Classes.Livro import Livro 
 from Entities.Classes.Cliente import Cliente
 import view.sistema as sys
-import os
 
 while True:
 
@@ -14,7 +12,7 @@ while True:
         while True:
             titulo = str(input('Titulo: '))
             autor = str(input('Autor: '))
-            editora = str(input('Editora: '))
+            editora = str(input('Editora: ')) 
 
             livro = Livro(titulo, autor, editora)
             controle = cadastrar_livro(livro)  # Cadastra e controle recebe valor
