@@ -14,7 +14,9 @@ def menu():
             print('1 - Cadastrar Livro ')
             print('2 - Cadastrar Cliente ')
             print('3 - Vizualizar dados')
-            print('4 - Sair')
+            print('4 - Aturalizar Registro')
+            print('5 - Deletar dados')
+            print('6 - Sair')
 
             escolha = int(input('>>> '))
             if escolha in [1, 2, 3, 4]:
@@ -29,16 +31,15 @@ def menu():
         
         
 def verDadosPrint():
-    print('-' * 30)
-    print('Deseja ver dados de qual tabela?'.center(30))
-    print('-' * 30)
+    titulo('Deseja ver dados de qual tabela?')
     print('1 - Livros')
     print('2 - Clientes')
+    print('-' * 30)
 
-    os.system('cls')
     
 def saida():
     print('-' * 30)
     print('Encerrando...'.center(30))
     sleep(0.7)
     print('-' * 30)
+

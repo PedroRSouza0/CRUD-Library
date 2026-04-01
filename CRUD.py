@@ -37,36 +37,41 @@ def cadastrar_cliente(cliente):
         return True
 
 
-def ver_livros(campos='*', condicao=0):
+def ver_livros(tabela=1, condicao=0):
     """
     SELECT <campos> FROM <tabela> WHERE <condicao>
     """
-    try:
-        if not condicao:
-            query = f"SELECT {campos} FROM livro"
-            cursor.execute(query)
-            saida = cursor.fetchall() # Recebe a query
-            for linha in saida:
-                print(linha)
-        elif condicao:
-            try:
-                query = f"SELECT {campos} FROM livro WHERE id_livro=10"
+    if tabela == '1':
+
+        try:
+            if not condicao:
+                query = f"SELECT * FROM livro"
+                cursor.execute(query)
+                saida = cursor.fetchall() # Recebe a query
+                for linha in saida:
+                    print(linha)
+            # elif condicao:
+            #     try:
+            #         query = f"SELECT {campos} FROM livro WHERE id_livro=10"
+            #         cursor.execute(query)
+            #         saida = cursor.fetchall()
+            #         print(saida)
+            #     except Exception as erro:
+            #         print(f'ERRO. {erro}')
+        except Exception as erro:
+            print(f'ERRO ao consultar livros, {erro}')
+        
+
+def ver_cliente(tabela, condicao=0):
+    if tabela == '2':
+        try:
+            if not condicao:
+                query = f"SELECT * FROM cliente"
                 cursor.execute(query)
                 saida = cursor.fetchall()
-                print(saida)
-            except Exception as erro:
-                print(f'ERRO. {erro}')
-    except Exception as erro:
-        print(f'ERRO ao consultar livros, {erro}')
-    
+                for linha in saida:
+                    print(linha)
+        except Exception as erro:
+            print(f'ERRO ao consultar clientes, {erro}')
 
-def ver_cliente(campos, condicao=0):
-    try:
-        if not condicao:
-            query = f"SELECT {campos} FROM cliente"
-            cursor.execute(query)
-            saida = cursor.fetchall()
-            for linha in saida:
-                print(linha)
-    except Exception as erro:
-        print(f'ERRO ao consultar clientes, {erro}')
+
