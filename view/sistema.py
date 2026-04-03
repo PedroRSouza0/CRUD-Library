@@ -19,7 +19,7 @@ def menu():
             print('6 - Sair')
 
             escolha = int(input('>>> '))
-            if escolha in [1, 2, 3, 4]:
+            if escolha in [1, 2, 3, 4, 5, 6]:
                 return escolha
             else: 
                 print('\nDigite um valor válido.')
@@ -27,7 +27,7 @@ def menu():
             print('\nERRO. Digite uma opção válida')
         except KeyboardInterrupt:
             print('\nO usuário encerrou pelo teclado')
-            return 4
+            return 6 # sair
         
         
 def verDadosPrint():

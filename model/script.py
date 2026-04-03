@@ -30,7 +30,7 @@ cursor.execute("""SELECT * FROM livro WHERE id_livro = 2""")
 livros = cursor.fetchall() # traz o resultado da query e retorna numa lista. Ficar depois do select para retornar
 
 # Delete
-cursor.execute("DELETE FROM livro WHERE id_livro = 1")
+#cursor.execute("DELETE FROM livro WHERE id_livro = 1")
 # print(livros)
 
 # for regis in livros:

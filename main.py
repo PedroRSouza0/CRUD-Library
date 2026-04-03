@@ -66,6 +66,18 @@ while True:
 
 
     elif escolha == 4:
+        # atualizar registro
+        sys.verDadosPrint()
+        tab = str(input('Tabela: '))
+        id_do_registro = str(input('id: '))
+
+        atualizar_registro(tab, id_do_registro)
+
+    elif escolha == 5:
+        # deletar dados
+        print('vsfd')
+
+    elif escolha == 6:
         sys.saida()
         break
     
